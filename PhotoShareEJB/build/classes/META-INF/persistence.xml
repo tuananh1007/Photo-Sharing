@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="PhotoShareEJBPU" transaction-type="JTA">
+    <jta-data-source>PhotoShare</jta-data-source>
+    <class>bean.entity.TblAdmin</class>
+    <class>bean.entity.TblComment</class>
+    <class>bean.entity.TblFAQ</class>
+    <class>bean.entity.TblImage</class>
+    <class>bean.entity.TblQuery</class>
+    <class>bean.entity.TblUser</class>
+    <class>bean.entity.TblVote</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties/>
+  </persistence-unit>
+</persistence>

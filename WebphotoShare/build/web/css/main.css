@@ -1,0 +1,18 @@
+/* 
+    Document   : main
+    Created on : 01-10-2010, 22:45:35
+    Author     : Dell
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body, td, contentDiv { font-family:arial;font-size:14px; }
+h1 { font-size:16px; font-weight:bold; }
+.error { color:red;font-weight:bold;}
+
+

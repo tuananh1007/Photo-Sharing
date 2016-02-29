@@ -1,0 +1,53 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.multipart.maxSize" value="20000000" />
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="doCaptcha" class="capcha.RegistrationAction">
+        <result name="error">registration.jsp</result>
+        <result>/faces/registration.jsp</result>
+        </action>
+        <action name="alogin" class="admin.AdminLogin" >
+        <result name="input">/admin/login.jsp</result>
+        <result name="error">/admin/login.jsp</result>
+        <result>/admin/adminHome.jsp</result>
+        </action>
+        <action name="doUpload" class="capcha.UploadImg">
+                 <interceptor-ref name="fileUpload">
+                 <param name="maximumSize">104857600</param>
+                 <param name="allowedTypes">image/jpeg,image/gif,image/png,image/bmp,image/jpg</param>
+                 </interceptor-ref>
+                 <interceptor-ref name="basicStack" />
+        <result name="error">/faces/mypage.jsp</result>
+        <result name="input">/faces/mypage.jsp</result>
+        <result>/faces/mypage.jsp</result>
+        </action>
+        <action name="doEdit" class="capcha.EditImage">
+        <result name="error">/faces/edit.jsp</result>
+        <result name="input">/faces/edit.jsp</result>
+        <result>/faces/mypage.jsp</result>
+        </action>
+        <action name="doEditProfile" class="capcha.EditProfile">
+        <result name="error">/faces/myProfile.jsp</result>
+        <result name="input">/faces/myProfile.jsp</result>
+        <result>/faces/myProfile.jsp</result>
+        </action>
+        <action name="changePassword" class="capcha.ChangePassWord">
+        <result name="error">/faces/changePassword.jsp</result>
+        <result name="input">/faces/changePassword.jsp</result>
+        <result>/faces/changePassword.jsp</result>
+        </action>
+        <action name="dowritecomment" class="capcha.WriteComment">
+        <result name="error">/faces/detailsImage.jsp</result>
+        <result name="input">/faces/detailsImage.jsp</result>
+        <result name="success">faces/detailsImage.jsp?iid=${iid}</result>
+        <result name="back" type="redirect">${redirectURL}</result>
+        </action>
+        <action name="dowritequery" class="capcha.WriteQuery">
+        <result name="error">/faces/FQAs.jsp</result>
+        <result>/faces/FQAs.jsp</result>
+        </action>
+    </package>
+</struts>
